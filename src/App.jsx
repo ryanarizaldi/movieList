@@ -6,20 +6,39 @@ import Search from "./pages/Search";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Footer from "./components/Footer";
+// import { createBrowserHistory } from "history";
+
 import "./App.css";
 
 export default class App extends Component {
+  // state = {
+  //   input: "",
+  // };
+
+  // handleInput = (e) => {
+  //   this.setState({ input: e.target.value });
+  // };
+
+  // handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   const query = this.state.input;
+  //   const url = `/search/${query}`
+  //   <Route path={url} />
+  // };
   render() {
     return (
       <Router>
         <Switch>
           <Route exact path="/">
-            <Home />
+            <Home
+            // handleInput={this.handleInput}
+            // handleSubmit={this.handleSubmit}
+            />
           </Route>
           <Route path="/detail/:id?">
             <Detail />
           </Route>
-          <Route path="/search/:search?">
+          <Route path="/search/:keyword?">
             <Search />
           </Route>
           <Route path="/about">

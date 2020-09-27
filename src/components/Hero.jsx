@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-// import { Redirect } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 // import { browserHistory } from "react-router-dom";
-import { createBrowserHistory } from "history";
+// import { createBrowserHistory } from "history";
 import {
   Jumbotron,
   Button,
@@ -13,7 +13,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 export default class Hero extends Component {
   state = {
-    input: [],
+    input: "",
+    redirect: false,
   };
 
   handleInput = (e) => {
@@ -22,13 +23,20 @@ export default class Hero extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    const page = createBrowserHistory();
-    const query = this.state.input;
-    page.push("/search/" + query);
-    // browserHistory.push("/search");
+    // const page = createBrowserHistory();
+    this.setState({ redirect: true });
   };
+  // componentDidUpdate = (prevState) => {
+  //   if (this.state.input !== prevState.input) {
+  //     this.handleSubmit();
+  //   }
+  // };
   render() {
-    // console.log(history);
+    const query = this.state.input;
+    const url = `/search/${query}`;
+    if (this.state.redirect === true) {
+      return <Redirect push to={url} />;
+    }
     return (
       <div>
         <Jumbotron>

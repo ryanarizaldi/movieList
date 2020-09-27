@@ -5,7 +5,7 @@ import { withRouter } from "react-router-dom";
 
 class Search extends Component {
   render() {
-    const keyword = this.props.match.params.search;
+    const keyword = this.props.match.params.keyword;
     return (
       <div>
         <Navigation />

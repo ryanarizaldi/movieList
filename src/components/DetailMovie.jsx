@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { Container, Col, Row, Card } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
+import noImg from "../assets/img/noimg.png";
 
 export default class DetailMovie extends Component {
   state = {
@@ -43,6 +44,43 @@ export default class DetailMovie extends Component {
         });
         console.log(this.state.similiar);
       });
+  };
+
+  componentDidUpdate = (prevProps) => {
+    const { id } = this.props;
+    if (id !== prevProps.id) {
+      window.scrollTo(0, 0);
+
+      fetch(
+        `https://api.themoviedb.org/3/movie/${id}?api_key=0f4cb6189e20110c05e4b524ae7821ac`
+      )
+        .then((response) => response.json())
+        .then((json) => {
+          this.setState({
+            movies: json,
+          });
+        });
+      fetch(
+        `https://api.themoviedb.org/3/movie/${id}/credits?api_key=0f4cb6189e20110c05e4b524ae7821ac`
+      )
+        .then((response) => response.json())
+        .then((json) => {
+          this.setState({
+            casts: json.cast.slice(0, 5),
+          });
+          // console.log(this.state.casts);
+        });
+      fetch(
+        `https://api.themoviedb.org/3/movie/${id}/similar?api_key=0f4cb6189e20110c05e4b524ae7821ac`
+      )
+        .then((response) => response.json())
+        .then((json) => {
+          this.setState({
+            similiar: json.results.slice(0, 5),
+          });
+          console.log(this.state.similiar);
+        });
+    }
   };
 
   //   matchMovie = () => {
@@ -102,7 +140,11 @@ export default class DetailMovie extends Component {
                     <Card>
                       <Card.Img
                         variant="top"
-                        src={"http://image.tmdb.org/t/p/w500" + mov.poster_path}
+                        src={
+                          mov.poster_path
+                            ? "http://image.tmdb.org/t/p/w500" + mov.poster_path
+                            : noImg
+                        }
                       />
                       <Card.Body>
                         <Card.Title>{mov.original_title}</Card.Title>

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { Container, Col, Row, Card } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
+import noImg from "../assets/img/noimg.png";
 
 export default class SearchMovie extends Component {
   state = {
@@ -37,7 +38,11 @@ export default class SearchMovie extends Component {
                     <Card>
                       <Card.Img
                         variant="top"
-                        src={"http://image.tmdb.org/t/p/w500" + mov.poster_path}
+                        src={
+                          mov.poster_path
+                            ? "http://image.tmdb.org/t/p/w500" + mov.poster_path
+                            : noImg
+                        }
                       />
                       <Card.Body>
                         <Card.Title>{mov.original_title}</Card.Title>
