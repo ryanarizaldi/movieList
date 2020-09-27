@@ -57,7 +57,7 @@ export default class PopularMovies extends Component {
             {this.state.movies ? (
               this.state.movies.slice(5, 10).map((mov) => (
                 <Col>
-                  <Link to={`/detail/${mov.id}`}>
+                  <Link to={"/detail/" + mov.id}>
                     <Card>
                       <Card.Img
                         variant="top"
