@@ -1,33 +1,32 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Home from "./pages/Home";
+import Detail from "./pages/Detail";
+import Search from "./pages/Search";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
 import Footer from "./components/Footer";
-import Apa from "./components/Navigation";
+import "./App.css";
 
 export default class App extends Component {
-  state = {
-    movie: [],
-  };
-
-  componentDidMount = () => {
-    fetch(
-      "https://api.themoviedb.org/3/movie/popular?api_key=0f4cb6189e20110c05e4b524ae7821ac&language=en-US&page=1"
-    )
-      .then((response) => response.json())
-      .then((json) => {
-        this.setState({
-          movie: json.results,
-        });
-      });
-  };
-
   render() {
     return (
       <Router>
-        <Apa />
         <Switch>
-          <Route path="/">
-            <Home movie={this.state.movie} />
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route path="/detail/:id?">
+            <Detail />
+          </Route>
+          <Route path="/search/:search?">
+            <Search />
+          </Route>
+          <Route path="/about">
+            <About />
+          </Route>
+          <Route path="/contact">
+            <Contact />
           </Route>
         </Switch>
         <Footer />

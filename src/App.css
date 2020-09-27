@@ -1,39 +1,178 @@
-.App {
+.navbar {
+  background: #AF0404 !important;
+  height: 112px;
+}
+
+.navbar-brand a,
+.navbar-nav a {
+  color: white !important;
+  text-decoration: none;
+
+}
+
+/* .navbar-brand a {} */
+
+.no-bg {
+  background: none !important;
+}
+
+.navbar-brand {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 21px;
+}
+
+.navbar-nav a {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 21px;
+}
+
+.footer {
+  /* position: relative; */
+  margin-top: 200px;
+  height: 200px;
+  left: 0px;
+  right: 0;
+  bottom: 0px;
+  background: #252525;
+  padding: 67.4px 568px 24.47px 568px;
+  color: white;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.footer svg {
+  font-size: 55px;
+  padding-right: 8px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.jumbotron {
+  background-image: url(./assets/img/hero-bg.png);
+  background-size: cover;
+  height: 800px;
+  margin-top: -112px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.jumbotron-content {
+  text-align: center;
+  margin-top: 355px;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.jumbotron-content .form-inline {
+  margin-left: 390px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
+.jumbotron-content .form-inline input {
+  height: 36px;
+  width: 244px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+}
 
-  to {
-    transform: rotate(360deg);
-  }
+.jumbotron-content .form-inline button {
+  height: 36px;
+  width: 100px;
+  color: black;
+  background: #D2112F;
+  box-shadow: -2px 2px 2px rgba(156, 156, 156, 0.25);
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.popular-movies {
+  margin-top: 71px;
+}
+
+.search h1,
+.popular-movies h1 {
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 42px;
+}
+
+.search .col-lg-3,
+.popular-movies .col {
+  padding-top: 71px;
+
+}
+
+.card {
+  border-radius: 5px !important;
+  transition: 0.6s;
+}
+
+.card:hover {
+  transform: scale(1.15);
+  cursor: pointer;
+}
+
+.card-body {
+  color: white;
+  background: #414141;
+  border-radius: 0px 0px 5px 5px;
+}
+
+.card-title {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 21px;
+  text-align: left;
+}
+
+.card-text {
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 16px;
+}
+
+.search .col-lg-3 a,
+.col a {
+  text-decoration: none;
+}
+
+.detail-movie {
+  padding-top: 71px;
+}
+
+.detail-movie h3 {
+  font-weight: bold;
+  font-size: 2.5em;
+}
+
+.detail-movie .title {
+  font-size: 1.8em;
+}
+
+.detail-movie .title .small {
+  font-size: 0.8em;
+  font-weight: 200;
+}
+
+.detail-movie .description p {
+  font-size: 20px;
+  margin-top: 35px;
+}
+
+.detail-movie .rate p {
+  padding-top: 20px;
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.similiar {
+  padding-top: 71px;
+  padding-bottom: 71px;
+}
+
+.search-msg {
+  padding-top: 71px;
+  height: 370px;
+}
+
+.search h1 {
+  padding-top: 71px;
 }
