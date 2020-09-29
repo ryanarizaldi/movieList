@@ -6,6 +6,7 @@ import Search from "./pages/Search";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Footer from "./components/Footer";
+import Navigation from "./components/Navigation";
 // import { createBrowserHistory } from "history";
 
 import "./App.css";
@@ -29,12 +30,9 @@ export default class App extends Component {
     return (
       <Router>
         <Switch>
-          <Route exact path="/">
-            <Home
-            // handleInput={this.handleInput}
-            // handleSubmit={this.handleSubmit}
-            />
-          </Route>
+          <Route exact path="/" component={Home} />
+          {/* <Home />
+          </Route> */}
           <Route path="/detail/:id?">
             <Detail />
           </Route>
@@ -46,6 +44,21 @@ export default class App extends Component {
           </Route>
           <Route path="/contact">
             <Contact />
+          </Route>
+
+          <Route path="*">
+            <Navigation />
+            <div className="container">
+              <h1>NO PAGE FOUND</h1>
+              <h1>NO PAGE FOUND</h1>
+              <h1>NO PAGE FOUND</h1>
+              <h1>NO PAGE FOUND</h1>
+              <h1>NO PAGE FOUND</h1>
+              <h1>NO PAGE FOUND</h1>
+              <h1>NO PAGE FOUND</h1>
+              <h1>NO PAGE FOUND</h1>
+              <h1>NO PAGE FOUND</h1>
+            </div>
           </Route>
         </Switch>
         <Footer />

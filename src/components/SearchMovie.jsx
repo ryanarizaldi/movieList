@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import { Container, Col, Row, Card } from "react-bootstrap";
+import { Container, Col, Row, Card, Alert } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import noImg from "../assets/img/noimg.png";
 

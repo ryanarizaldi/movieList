@@ -131,7 +131,7 @@ export default class DetailMovie extends Component {
           </Row>
           <Row>
             <Col lg="12">
-              <h1 className="similiar">Similiar Movie</h1>
+              <h1 className="similiar">Similar Movie</h1>
             </Col>
             {this.state.similiar.length ? (
               this.state.similiar.map((mov) => (

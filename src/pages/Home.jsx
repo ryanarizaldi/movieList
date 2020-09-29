@@ -42,10 +42,11 @@ export default class Home extends Component {
   //     });
   // };
   render() {
+    console.log(this.props);
     return (
       <div>
         <NavigationNoBg />
-        <Hero />
+        <Hero hitory={this.props.history} />
         <PopularMovies />
         {/* <ul>
           {this.state.movie ? (
